@@ -13,3 +13,128 @@ window.addEventListener("scroll", () => {
 menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("show");
 });
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        mobileMenu.classList.remove("show");
+    }
+});
+
+const services = {
+
+    cleaning: {
+        image: "images/service1.jpg",
+        title: "Teeth Cleaning",
+        description: "Professional teeth cleaning removes plaque and tartar buildup while helping prevent gum disease, cavities, and bad breath.",
+        benefits: [
+            "Healthier gums",
+            "Fresh breath",
+            "Reduced plaque buildup"
+        ]
+    },
+
+    whitening: {
+        image: "images/service2.jpg",
+        title: "Teeth Whitening",
+        description: "Safe and effective whitening treatments designed to brighten stained or discolored teeth and enhance your smile.",
+        benefits: [
+            "Whiter teeth",
+            "Boosted confidence",
+            "Quick treatment results"
+        ]
+    },
+
+    implant: {
+        image: "images/service3.jpg",
+        title: "Dental Implants",
+        description: "Permanent tooth replacement solutions that restore appearance, comfort, and chewing functionality.",
+        benefits: [
+            "Natural appearance",
+            "Long-lasting solution",
+            "Improved chewing ability"
+        ]
+    },
+
+    rootcanal: {
+        image: "images/service4.jpg",
+        title: "Root Canal",
+        description: "Advanced treatment that removes infection and helps save natural teeth while relieving pain.",
+        benefits: [
+            "Preserves natural teeth",
+            "Relieves pain",
+            "Prevents further infection"
+        ]
+    },
+
+    braces: {
+        image: "images/service5.jpg",
+        title: "Braces",
+        description: "Modern braces treatment designed to improve teeth alignment, bite function, and smile appearance.",
+        benefits: [
+            "Straighter teeth",
+            "Better bite alignment",
+            "Enhanced smile confidence"
+        ]
+    },
+
+    kids: {
+        image: "images/service6.jpg",
+        title: "Pediatric Dentistry",
+        description: "Gentle and friendly dental care designed specifically for children and young patients.",
+        benefits: [
+            "Child-friendly environment",
+            "Preventive dental care",
+            "Healthy oral habits"
+        ]
+    }
+
+};
+
+
+const serviceCards = document.querySelectorAll(".service-card");
+const modal = document.querySelector(".service-modal");
+const modalImage = document.getElementById("modal-image");
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-description");
+const modalBenefits = document.getElementById("modal-benefits");
+const closeModal = document.querySelector(".modal-close");
+
+serviceCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const service = services[card.dataset.service];
+        modalImage.src = service.image;
+        modalImage.alt = service.title;
+        modalTitle.textContent = service.title;
+        modalDescription.textContent = service.description;
+
+        modalBenefits.innerHTML = service.benefits.map(item => `<li>${item}</li>`)
+            .join("");
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+    });
+
+});
+
+function closeServiceModal() {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+closeModal.addEventListener("click", closeServiceModal);
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        closeServiceModal();
+    }
+});
+
+document.addEventListener("keydown", (e) => {
+    if (
+        e.key === "Escape" &&
+        modal.classList.contains("show")
+    ) {
+        closeServiceModal();
+    }
+});

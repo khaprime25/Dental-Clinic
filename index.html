@@ -4,82 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Moe Dental Clinic</title>
-
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- Navbar Section Starts -->
     <header class="navbar">
         <div class="container nav-wrapper">
-
             <div class="logo">
                 <i class="fa-solid fa-tooth"></i>
                 <span>MOE <b></b></span>DENTAL
             </div>
 
             <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
                 <a href="#">Services</a>
                 <a href="#">Results</a>
                 <a href="#">Doctors</a>
-                <a href="#">Blogs</a>
                 <a href="#">Contact</a>
             </nav>
 
             <a href="#" class="btn-primary nav-btn">
                 Bookings
             </a>
-
             <button class="menu-btn">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
         </div>
     </header>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#service">Services</a>
         <a href="#">Results</a>
         <a href="#">Doctors</a>
-        <a href="#">Blogs</a>
         <a href="#">Contact</a>
-
         <a href="#" class="btn-primary mobile-btn">
             Bookings
         </a>
     </div>
+    <!-- Navbar Section Ends -->
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
+    <!-- Home Section Starts -->
+    <section class="hero" id="home">
         <div class="container hero-wrapper">
-
-            <!-- Left -->
             <div class="hero-text">
-
                 <span class="tag">Trusted Dental Care</span>
-
                 <h1>
-                    Healthy Smile Starts With
-                    <span>Expert Care</span>
+                    Healthy Smile Starts With <span>Expert Care</span>
                 </h1>
-
                 <p>
                     Moe Dental Clinic provides modern dental treatment,
                     advanced equipment, and professional care to keep your
@@ -88,33 +73,214 @@
 
                 <div class="hero-actions">
                     <a href="#" class="btn-primary">Book Appointment</a>
-                    <a href="#" class="btn-outline">View Services</a>
+                    <a href="#service" class="btn-outline">View Services</a>
                 </div>
 
-                <div class="stats">
-                    <div>
+                <div class="about-stats">
+                    <div class="about-stat">
                         <h3>5000+</h3>
-                        <p>Patients</p>
+                        <p>Happy Patients</p>
                     </div>
-                    <div>
+                    <div class="about-stat">
                         <h3>10+</h3>
-                        <p>Years</p>
+                        <p>Years Experience</p>
                     </div>
-                    <div>
+                    <div class="about-stat">
                         <h3>4.9★</h3>
-                        <p>Rating</p>
+                        <p>Patient Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../Images/home.jpg" alt="Dentist">
+            </div>
+        </div>
+    </section>
+    <!-- Home Section Ends -->
+
+    <!-- Promotion Banner Starts -->
+    <section class="promotion-banner">
+        <div class="container">
+            <div class="promotion-content">
+                <div class="promotion-text">
+                    <span>🎉 Limited Time Offer</span>
+                    <h2>Free Dental Consultation For New Patients</h2>
+                    <p>
+                        Book your first appointment today and receive
+                        20% off professional teeth whitening treatment.
+                    </p>
+                </div>
+                <a href="#" class="btn-primary">Bookings</a>
+            </div>
+        </div>
+    </section>
+    <!-- Promotion Banner Ends -->
+
+    <!-- About Section Starts -->
+    <section class="about" id="about">
+
+        <div class="container">
+            <div class="about-wrapper">
+
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="About Moe Dental Clinic">
+                </div>
+
+                <div class="about-content">
+                    <span class="section-tag">About Moe Dental Clinic</span>
+                    <h2>Dedicated To Providing Comfortable And Quality Dental Care</h2>
+                    <p>
+                        At Moe Dental Clinic, we combine professional expertise,
+                        modern technology, and personalized treatment to help
+                        every patient achieve a healthy and confident smile.
+                        Our commitment is to provide dental care in a comfortable,
+                        welcoming, and trusted environment.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Experienced Dental Professionals</span>
+                        </div>
+
+                        <div class="about-feature">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Modern Equipment & Techniques</span>
+                        </div>
+
+                        <div class="about-feature">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Personalized Patient Care</span>
+                        </div>
                     </div>
                 </div>
 
             </div>
+        </div>
 
-            <!-- Right -->
-            <div class="hero-image">
-                <img src="../Images/home.jpg" alt="Dentist">
+    </section>
+    <!-- About Section Ends -->
+
+    <!-- Service Section Starts -->
+    <section class="services" id="service">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    Our Services
+                </span>
+
+                <h2>
+                    Comprehensive Dental Care For Every Smile
+                </h2>
+
+                <p>
+                    From preventive care to advanced treatments,
+                    Moe Dental Clinic offers personalized dental services
+                    designed for patients of all ages.
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card" data-service="cleaning">
+                    <i class="fa-solid fa-tooth"></i>
+                    <h3>Teeth Cleaning</h3>
+                    <p>
+                        Professional cleaning to maintain healthy teeth and gums.
+                    </p>
+                    <button class="service-btn">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card" data-service="whitening">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <h3>Teeth Whitening</h3>
+                    <p>
+                        Brighten your smile with safe whitening treatments.
+                    </p>
+                    <button class="service-btn">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card" data-service="implant">
+                    <i class="fa-solid fa-crown"></i>
+                    <h3>Dental Implants</h3>
+                    <p>
+                        Permanent solutions for missing teeth.
+                    </p>
+                    <button class="service-btn">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card" data-service="rootcanal">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <h3>Root Canal</h3>
+                    <p>
+                        Preserve damaged teeth with advanced treatment.
+                    </p>
+                    <button class="service-btn">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card" data-service="braces">
+                    <i class="fa-solid fa-teeth"></i>
+
+                    <h3>Braces</h3>
+
+                    <p>
+                        Improve teeth alignment and bite with modern braces treatment.
+                    </p>
+
+                    <button class="service-btn">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card" data-service="kids">
+                    <i class="fa-solid fa-child"></i>
+                    <h3>Pediatric Dentistry</h3>
+                    <p>
+                        Gentle dental care specially designed for children.
+                    </p>
+                    <button class="service-btn">
+                        Learn More
+                    </button>
+                </div>
+
             </div>
 
         </div>
     </section>
+    <!-- Service Section Ends -->
+
+    <!-- Service Card Starts -->
+    <div class="service-modal">
+
+        <div class="service-modal-content">
+            <div class="modal-img">
+                <img src="" alt="" id="modal-image">
+            </div>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <ul id="modal-benefits"></ul>
+
+            <div class="">
+                <a href="#" class="btn-primary">Book Appointment</a>
+                <button class="btn btn-outline modal-close">Close</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Service Card Ends -->
 
     <script src="script.js"></script>
 </body>
