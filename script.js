@@ -5,6 +5,7 @@ const mobileMenu = document.querySelector(".mobile-menu");
 window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
         navbar.classList.add("show");
+        mobileMenu.classList.remove("show");
     } else {
         navbar.classList.remove("show");
     }
@@ -90,7 +91,6 @@ const services = {
 
 };
 
-
 const serviceCards = document.querySelectorAll(".service-card");
 const modal = document.querySelector(".service-modal");
 const modalImage = document.getElementById("modal-image");
@@ -137,4 +137,88 @@ document.addEventListener("keydown", (e) => {
     ) {
         closeServiceModal();
     }
+});
+
+// Doctors Section
+/* ================= TEAM ================= */
+
+const teamFilters =
+    document.querySelectorAll(".team-filter");
+
+const dentistsGrid =
+    document.querySelector(".dentists-grid");
+
+const nursesGrid =
+    document.querySelector(".nurses-grid");
+
+const nurseToggleBtn =
+    document.getElementById("nurse-toggle-btn");
+
+const hiddenNurses =
+    document.querySelectorAll(".hidden-nurse");
+
+let nursesExpanded = false;
+
+/* Filters */
+
+teamFilters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        teamFilters.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const target =
+            button.dataset.target;
+
+        dentistsGrid.classList.remove("active-team");
+        nursesGrid.classList.remove("active-team");
+
+        if (target === "dentists") {
+
+            dentistsGrid.classList.add("active-team");
+
+            teamToggle.style.display = "none";
+
+            hiddenNurses.forEach(card =>
+                card.classList.remove("show")
+            );
+
+            nurseToggleBtn.textContent =
+                "Show More";
+
+            nursesExpanded = false;
+
+        } else {
+
+            nursesGrid.classList.add("active-team");
+
+            teamToggle.style.display = "flex";
+        }
+
+    });
+
+});
+
+/* Show More */
+
+const teamToggle =
+    document.querySelector(".team-toggle");
+
+nurseToggleBtn.addEventListener("click", () => {
+
+    nursesExpanded = !nursesExpanded;
+
+    hiddenNurses.forEach(card =>
+        card.classList.toggle("show")
+    );
+
+    nurseToggleBtn.textContent =
+        nursesExpanded
+            ? "Show Less"
+            : "Show More";
+
 });
