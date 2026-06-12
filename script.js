@@ -139,154 +139,171 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// Doctors Section
-/* ================= TEAM ================= */
-
-const teamFilters =
-    document.querySelectorAll(".team-filter");
-
-const dentistsGrid =
-    document.querySelector(".dentists-grid");
-
-const nursesGrid =
-    document.querySelector(".nurses-grid");
-
-const nurseToggleBtn =
-    document.getElementById("nurse-toggle-btn");
-
-const hiddenNurses =
-    document.querySelectorAll(".hidden-nurse");
-
+// Doctors 
+const teamFilters = document.querySelectorAll(".team-filter");
+const dentistsGrid = document.querySelector(".dentists-grid");
+const nursesGrid = document.querySelector(".nurses-grid");
+const nurseToggleBtn = document.getElementById("nurse-toggle-btn");
+const hiddenNurses = document.querySelectorAll(".hidden-nurse");
 let nursesExpanded = false;
 
-/* Filters */
-
 teamFilters.forEach(button => {
-
     button.addEventListener("click", () => {
-
-        teamFilters.forEach(btn =>
-            btn.classList.remove("active")
-        );
+        teamFilters.forEach(btn => btn.classList.remove("active"));
 
         button.classList.add("active");
-
-        const target =
-            button.dataset.target;
+        const target = button.dataset.target;
 
         dentistsGrid.classList.remove("active-team");
         nursesGrid.classList.remove("active-team");
 
         if (target === "dentists") {
-
             dentistsGrid.classList.add("active-team");
-
             teamToggle.style.display = "none";
-
-            hiddenNurses.forEach(card =>
-                card.classList.remove("show")
-            );
-
-            nurseToggleBtn.textContent =
-                "Show More";
-
+            hiddenNurses.forEach(card => card.classList.remove("show"));
+            nurseToggleBtn.textContent = "Show More";
             nursesExpanded = false;
-
         } else {
-
             nursesGrid.classList.add("active-team");
-
             teamToggle.style.display = "flex";
         }
-
     });
-
 });
 
 /* Show More */
-
 const teamToggle =
     document.querySelector(".team-toggle");
-
 nurseToggleBtn.addEventListener("click", () => {
-
     nursesExpanded = !nursesExpanded;
-
-    hiddenNurses.forEach(card =>
-        card.classList.toggle("show")
-    );
-
-    nurseToggleBtn.textContent =
-        nursesExpanded
-            ? "Show Less"
-            : "Show More";
-
+    hiddenNurses.forEach(card => card.classList.toggle("show"));
+    nurseToggleBtn.textContent = nursesExpanded ? "Show Less" : "Show More";
 });
 
-/* ================= RESULTS ================= */
-
-const resultCards =
-    document.querySelectorAll(".result-card");
+/* Results Section */
+const resultCards = document.querySelectorAll(".result-card");
 
 resultCards.forEach(card => {
-
-    const image =
-        card.querySelector(".result-image");
-
-    const badge =
-        card.querySelector(".result-badge");
-
-    const buttons =
-        card.querySelectorAll(".result-btn");
+    const image = card.querySelector(".result-image");
+    const badge = card.querySelector(".result-badge");
+    const buttons = card.querySelectorAll(".result-btn");
 
     buttons.forEach(button => {
-
         button.addEventListener("click", () => {
-
-            buttons.forEach(btn =>
-                btn.classList.remove("active")
-            );
+            buttons.forEach(btn => btn.classList.remove("active"));
 
             button.classList.add("active");
-
-            const isAfter =
-                button.textContent.trim() === "After";
-
-            image.classList.remove(
-                "slide-left",
-                "slide-right"
-            );
-
+            const isAfter = button.textContent.trim() === "After";
+            image.classList.remove("slide-left", "slide-right");
             void image.offsetWidth;
-
             if (isAfter) {
-
-                image.src =
-                    image.dataset.after;
-
-                badge.textContent =
-                    "After";
-
-                image.classList.add(
-                    "slide-right"
-                );
-
+                image.src = image.dataset.after;
+                badge.textContent = "After";
+                image.classList.add("slide-right");
             } else {
-
-                image.src =
-                    image.dataset.before;
-
-                badge.textContent =
-                    "Before";
-
-                image.classList.add(
-                    "slide-left"
-                );
-
+                image.src = image.dataset.before;
+                badge.textContent = "Before";
+                image.classList.add("slide-left");
             }
-
         });
-
     });
+});
 
-}); 
+/* Review Section */
+const testimonials = [
+    {
+        name: "Aung Aung",
+        treatment: "Teeth Whitening Patient",
+        review: "The dentists were professional and caring. My teeth whitening treatment exceeded expectations and the entire process was comfortable."
+    }, {
+        name: "Su Su",
+        treatment: "Braces Treatment Patient",
+        review: "The team explained every step clearly during my braces treatment. I am extremely happy with the results."
+    }, {
+        name: "Ko Ko",
+        treatment: "Smile Makeover Patient",
+        review: "From consultation to treatment, the service was excellent. The clinic is modern, clean, and welcoming."
+    }, {
+        name: "Mya Mya",
+        treatment: "Dental Veneers Patient",
+        review: "My smile makeover transformed my confidence. The staff were friendly and attentive throughout."
+    }, {
+        name: "Kyaw Kyaw",
+        treatment: "General Dentistry Patient",
+        review: "The environment was comfortable and relaxing. I highly recommend Moe Dental Clinic to anyone."
+    }
+];
+
+const testimonialTrack = document.querySelector(".testimonial-track");
+const prevBtn = document.getElementById("prev-testimonial");
+const nextBtn = document.getElementById("next-testimonial");
+
+let currentIndex = 0;
+
+function getVisibleCount() {
+    return window.innerWidth <= 768 ? 1 : 2;
+}
+
+function renderTestimonials() {
+    testimonialTrack.innerHTML = "";
+    const visibleCount = getVisibleCount();
+
+    for (let i = 0; i < visibleCount; i++) {
+        const testimonial = testimonials[(currentIndex + i) % testimonials.length];
+
+        testimonialTrack.innerHTML += `
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "
+                </div>
+
+                <div class="testimonial-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <p class="testimonial-review">
+                    "${testimonial.review}"
+                </p>
+
+                <div class="testimonial-footer">
+                    <div class="testimonial-name">
+                        ${testimonial.name}
+                    </div>
+
+                    <div class="testimonial-treatment">
+                        ${testimonial.treatment}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    renderTestimonials();
+});
+
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    renderTestimonials();
+});
+
+let testimonialInterval = setInterval(nextSlide, 5000);
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    renderTestimonials();
+}
+
+const testimonialSection = document.querySelector(".testimonial-slider");
+testimonialSection.addEventListener("mouseenter", () => clearInterval(testimonialInterval));
+testimonialSection.addEventListener("mouseleave", () => {
+    testimonialInterval = setInterval(nextSlide, 7000);
+});
+
+window.addEventListener("resize", renderTestimonials);
+renderTestimonials();

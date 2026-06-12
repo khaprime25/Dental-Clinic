@@ -531,7 +531,6 @@ a {
 }
 
 /* Doctors Section */
-
 .team {
     padding: 3rem 0;
 }
@@ -638,7 +637,6 @@ a {
 }
 
 /* Nurse Visibility */
-
 .hidden-nurse {
     display: none;
 }
@@ -654,7 +652,6 @@ a {
 }
 
 /* Why Choose Us */
-
 .choose-us {
     padding: 3rem 0;
     background: var(--light);
@@ -667,8 +664,6 @@ a {
     align-items: center;
 }
 
-/* Image */
-
 .choose-image {
     overflow: hidden;
     border-radius: 2rem;
@@ -680,8 +675,6 @@ a {
     object-fit: cover;
     display: block;
 }
-
-/* Content */
 
 .choose-content h2 {
     font-size: 4rem;
@@ -696,8 +689,6 @@ a {
     margin-bottom: 4rem;
 }
 
-/* Features */
-
 .choose-features {
     display: flex;
     flex-direction: column;
@@ -707,15 +698,10 @@ a {
 .choose-feature {
     display: flex;
     gap: 2rem;
-
     background: var(--white);
-
     padding: 2rem;
-
     border-radius: 1.5rem;
-
     box-shadow: var(--shadow-sm);
-
     transition: 0.3s;
 }
 
@@ -728,13 +714,10 @@ a {
     min-width: 5.5rem;
     width: 5.5rem;
     height: 5.5rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: rgba(193, 18, 31, 0.08);
 }
 
@@ -754,6 +737,7 @@ a {
     line-height: 1.7;
 }
 
+/* Before and After Section */
 .results {
     padding: 3rem 0;
 }
@@ -768,13 +752,10 @@ a {
 
 .result-card {
     background: var(--white);
-
     border-radius: 2rem;
     margin: 2rem 0;
     overflow: hidden;
-
     box-shadow: var(--shadow-md);
-
     transition: 0.3s;
 }
 
@@ -784,7 +765,6 @@ a {
 }
 
 /* Image */
-
 .result-image-wrapper {
     position: relative;
     overflow: hidden;
@@ -793,14 +773,11 @@ a {
 .result-image {
     width: 100%;
     height: 24rem;
-
     object-fit: cover;
-
     display: block;
 }
 
 /* Slide Animation */
-
 .result-image.slide-left {
     animation: slideLeft 1s ease;
 }
@@ -810,7 +787,6 @@ a {
 }
 
 @keyframes slideLeft {
-
     from {
         opacity: 0;
         transform: translateX(-3rem);
@@ -823,7 +799,6 @@ a {
 }
 
 @keyframes slideRight {
-
     from {
         opacity: 0;
         transform: translateX(3rem);
@@ -835,22 +810,14 @@ a {
     }
 }
 
-/* Badge */
-
 .result-badge {
     position: absolute;
-
     top: 2rem;
     left: 2rem;
-
     background: var(--primary);
-
     color: var(--white);
-
     padding: 0.8rem 1.6rem;
-
     border-radius: 5rem;
-
     font-size: 1.3rem;
     font-weight: 500;
 }
@@ -865,19 +832,12 @@ a {
 
 .result-btn {
     flex: 1;
-
     border: 0.1rem solid var(--border);
-
     background: transparent;
-
     padding: 1rem;
-
     border-radius: 5rem;
-
     font-size: 1.4rem;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
@@ -908,6 +868,116 @@ a {
     font-size: 1.5rem;
     color: var(--text);
     line-height: 1.8;
+}
+
+/* Reviews Section */
+.testimonials {
+    padding: 8rem 0;
+    background: var(--light);
+}
+
+.testimonial-slider {
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    transition: 0.4s ease;
+}
+
+.testimonial-card {
+    position: relative;
+    background: var(--white);
+    border: 0.1rem solid var(--border);
+    border-radius: 2rem;
+    padding: 3rem;
+    min-height: 32rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-quote {
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    font-size: 10rem;
+    font-weight: 700;
+    color: var(--primary);
+    opacity: 0.05;
+    line-height: 1;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-rating i {
+    color: #f4b400;
+    font-size: 1.6rem;
+}
+
+.testimonial-review {
+    font-size: 1.6rem;
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-footer {
+    padding-top: 2rem;
+    border-top: 0.1rem solid var(--border);
+}
+
+.testimonial-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-treatment {
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Controls */
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.testimonial-btn {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 0.1rem solid var(--border);
+    background: var(--white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.testimonial-btn i {
+    font-size: 1.6rem;
+}
+
+.testimonial-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
 }
 
 @media (max-width: 992px) {
@@ -981,29 +1051,23 @@ a {
     }
 
     .hero {
-
         min-height: 80vh;
-
         text-align: center;
     }
 
     .hero-content {
-
         max-width: 100%;
     }
 
     .hero-content h1 {
-
         font-size: 3.8rem;
     }
 
     .hero-content p {
-
         font-size: 1.5rem;
     }
 
     .hero-buttons {
-
         justify-content: center;
     }
 
@@ -1030,6 +1094,7 @@ a {
         gap: 2rem;
     }
 
+    /* Service Section */
     .services {
         padding: 6rem 0;
     }
@@ -1051,6 +1116,7 @@ a {
         margin: 0 auto;
     }
 
+    /* Doctor Section */
     .team {
         padding: 6rem 0;
     }
@@ -1072,6 +1138,7 @@ a {
         flex-wrap: wrap;
     }
 
+    /* Why Choose Us Section */
     .choose-us {
         padding: 6rem 0;
     }
@@ -1102,6 +1169,7 @@ a {
         height: 5rem;
     }
 
+    /* Result Section */
 
     .results {
         padding: 6rem 0;
@@ -1113,5 +1181,21 @@ a {
 
     .result-image {
         height: 28rem;
+    }
+
+    .testimonials {
+        padding: 6rem 0;
+    }
+
+    .testimonial-track {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        min-height: auto;
+    }
+
+    .testimonial-review {
+        font-size: 1.5rem;
     }
 }
