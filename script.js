@@ -222,3 +222,71 @@ nurseToggleBtn.addEventListener("click", () => {
             : "Show More";
 
 });
+
+/* ================= RESULTS ================= */
+
+const resultCards =
+    document.querySelectorAll(".result-card");
+
+resultCards.forEach(card => {
+
+    const image =
+        card.querySelector(".result-image");
+
+    const badge =
+        card.querySelector(".result-badge");
+
+    const buttons =
+        card.querySelectorAll(".result-btn");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            buttons.forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            button.classList.add("active");
+
+            const isAfter =
+                button.textContent.trim() === "After";
+
+            image.classList.remove(
+                "slide-left",
+                "slide-right"
+            );
+
+            void image.offsetWidth;
+
+            if (isAfter) {
+
+                image.src =
+                    image.dataset.after;
+
+                badge.textContent =
+                    "After";
+
+                image.classList.add(
+                    "slide-right"
+                );
+
+            } else {
+
+                image.src =
+                    image.dataset.before;
+
+                badge.textContent =
+                    "Before";
+
+                image.classList.add(
+                    "slide-left"
+                );
+
+            }
+
+        });
+
+    });
+
+}); 
