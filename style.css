@@ -168,88 +168,66 @@ a {
     text-align: center;
 }
 
+.mobile-btn:hover {
+    color: var(--light);
+}
+
 .hero {
-
     min-height: 100vh;
-
     display: flex;
     align-items: center;
-
     position: relative;
-
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.55)),
-        url("../Images/home.png");
-
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../Images/home.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .hero-content {
-
     max-width: 70rem;
-
     color: var(--white);
 }
 
 .hero-tag {
-
     display: inline-block;
-
     padding: 0.8rem 1.6rem;
-
     border-radius: 5rem;
     color: var(--white);
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid var(--white);
     backdrop-filter: blur(1rem);
-
     font-size: 1.4rem;
     font-weight: 500;
-
     margin-bottom: 2rem;
 }
 
 .hero-content h1 {
-
     font-size: 6rem;
     line-height: 1.2;
-
     margin-bottom: 2rem;
 }
 
 .hero-content p {
-
     max-width: 60rem;
-
     font-size: 1.7rem;
     line-height: 1.8;
-
     margin-bottom: 3rem;
-
     color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-buttons {
-
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
 
 .hero .btn-outline {
-
     border-color: rgba(255, 255, 255, 0.4);
-
     color: var(--white);
 }
 
 .hero .btn-outline:hover {
-
     background: var(--white);
-
     color: var(--black);
 }
 
@@ -651,6 +629,14 @@ a {
     margin-top: 3rem;
 }
 
+.team-toggle .btn-outline {
+    border: 1px solid var(--black);
+}
+
+.team-toggle .btn-outline:hover {
+    border: 1px solid var(--primary);
+}
+
 /* Why Choose Us */
 .choose-us {
     padding: 3rem 0;
@@ -852,6 +838,46 @@ a {
     color: var(--white);
 }
 
+.results-action .btn-outline {
+    border: 1px solid var(--black);
+}
+
+.results-action .btn-outline:hover {
+    border: 1px solid var(--primary);
+}
+
+.extra-result {
+    display: none;
+}
+
+.extra-result.show {
+    display: block;
+}
+
+.results-action {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.extra-result.show {
+    display: block;
+    animation: resultFade .4s ease;
+}
+
+@keyframes resultFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
 /* Content */
 
 .result-content {
@@ -872,7 +898,7 @@ a {
 
 /* Reviews Section */
 .testimonials {
-    padding: 8rem 0;
+    padding: 2rem 0;
     background: var(--light);
 }
 
@@ -892,8 +918,8 @@ a {
     background: var(--white);
     border: 0.1rem solid var(--border);
     border-radius: 2rem;
-    padding: 3rem;
-    min-height: 32rem;
+    padding: 2rem 3rem;
+    min-height: 28rem;
     box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: 0.3s;
@@ -980,6 +1006,174 @@ a {
     border-color: var(--primary);
 }
 
+/* Appointment */
+
+.appointment {
+    padding: 3rem 0;
+    background: var(--black);
+}
+
+.appointment-content {
+    max-width: 75rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.appointment-content h2 {
+    font-size: 4.2rem;
+    color: var(--white);
+    margin: 1.5rem 0;
+}
+
+.appointment-content p {
+    font-size: 1.6rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 3rem;
+}
+
+/* Contact */
+
+.contact {
+    padding: 3rem 0;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Left */
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-card {
+    display: flex;
+    gap: 2rem;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-0.5rem);
+}
+
+.contact-card i {
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+.contact-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-card p {
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* Right */
+
+.contact-map {
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 35rem;
+    border: none;
+}
+
+/* Footer */
+
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding-top: 4rem;
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer-brand h2 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h2 i {
+    color: var(--primary);
+    margin-right: 0.8rem;
+}
+
+.footer-brand p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-hours h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links ul,
+.footer-contact ul,
+.footer-hours ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-contact li,
+.footer-hours li {
+    margin-bottom: 1.4rem;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links a {
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-contact i {
+    color: var(--primary);
+    margin-right: 1rem;
+}
+
+.footer-bottom {
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+    margin-top: 5rem;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 @media (max-width: 992px) {
 
     .hero-content h1 {
@@ -1032,6 +1226,18 @@ a {
     .results-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-map iframe {
+        min-height: 45rem;
+    }
+
+    .footer-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1051,7 +1257,7 @@ a {
     }
 
     .hero {
-        min-height: 80vh;
+        min-height: 100vh;
         text-align: center;
     }
 
@@ -1197,5 +1403,41 @@ a {
 
     .testimonial-review {
         font-size: 1.5rem;
+    }
+
+    .appointment {
+        padding: 6rem 0;
+    }
+
+    .appointment-content h2 {
+        font-size: 3rem;
+    }
+
+    .contact {
+        padding: 6rem 0;
+    }
+
+    .contact-card {
+        padding: 2rem;
+    }
+
+    .contact-map iframe {
+        min-height: 35rem;
+    }
+
+    .footer {
+        padding-top: 6rem;
+    }
+
+    .footer-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact,
+    .footer-hours {
+        text-align: center;
     }
 }

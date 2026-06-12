@@ -207,6 +207,40 @@ resultCards.forEach(card => {
         });
     });
 });
+/* Before and After Toggle */
+
+const resultsToggleBtn =
+    document.getElementById("results-toggle-btn");
+
+const extraResults =
+    document.querySelectorAll(".extra-result");
+
+let resultsExpanded = false;
+
+resultsToggleBtn.addEventListener("click", () => {
+
+    resultsExpanded = !resultsExpanded;
+
+    extraResults.forEach(card => {
+
+        if (resultsExpanded) {
+
+            card.classList.add("show");
+
+        } else {
+
+            card.classList.remove("show");
+
+        }
+
+    });
+
+    resultsToggleBtn.textContent =
+        resultsExpanded
+            ? "See Less"
+            : "See More";
+
+});
 
 /* Review Section */
 const testimonials = [
